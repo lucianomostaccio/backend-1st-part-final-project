@@ -134,3 +134,5 @@ manager.updateProduct(1, { price: 15000 }); // Actualizar el precio del Producto
 manager.deleteProduct(2); // Eliminar el Producto 2
 console.log("(se ha eliminado el producto 2)");
 console.log("Todos los productos que quedaron:", allProducts);
+
+module.exports = ProductManager;
