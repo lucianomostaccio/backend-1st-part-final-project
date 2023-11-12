@@ -102,37 +102,37 @@ class ProductManager {
 }
 
 // Ejemplo de uso:
-const filePath = path.join(__dirname, "products.json");
-const manager = new ProductManager(filePath);
+// const filePath = path.join(__dirname, "products.json");
+// const manager = new ProductManager(filePath);
 
-const allProducts = manager.getProducts();
-console.log("Todos los productos:", allProducts);
+// const allProducts = manager.getProducts();
+// console.log("Todos los productos:", allProducts);
 
-manager.addProduct({
-  title: "Producto 1",
-  description: "Descripción del producto 1",
-  price: 10000,
-  thumbnail: "images/producto1.jpg",
-  code: "PROD001",
-  stock: 50,
-});
+// manager.addProduct({
+//   title: "Producto 1",
+//   description: "Descripción del producto 1",
+//   price: 10000,
+//   thumbnail: "images/producto1.jpg",
+//   code: "PROD001",
+//   stock: 50,
+// });
 
-manager.addProduct({
-  title: "Producto 2",
-  description: "Descripción del producto 2",
-  price: 5000,
-  thumbnail: "images/producto2.jpg",
-  code: "PROD002",
-  stock: 70,
-});
+// manager.addProduct({
+//   title: "Producto 2",
+//   description: "Descripción del producto 2",
+//   price: 5000,
+//   thumbnail: "images/producto2.jpg",
+//   code: "PROD002",
+//   stock: 70,
+// });
 
-const productById = manager.getProductById(1);
-console.log("Producto por ID:", productById);
+// const productById = manager.getProductById(1);
+// console.log("Producto por ID:", productById);
 
-manager.updateProduct(1, { price: 15000 }); // Actualizar el precio del Producto 1
+// manager.updateProduct(1, { price: 15000 }); // Actualizar el precio del Producto 1
 
-manager.deleteProduct(2); // Eliminar el Producto 2
-console.log("(se ha eliminado el producto 2)");
-console.log("Todos los productos que quedaron:", allProducts);
+// manager.deleteProduct(2); // Eliminar el Producto 2
+// console.log("(se ha eliminado el producto 2)");
+// console.log("Todos los productos que quedaron:", allProducts);
 
 module.exports = ProductManager;
