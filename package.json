@@ -2,23 +2,17 @@
   "name": "desafio3-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "ProductManager.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node .",
-    "dev": "nodemon -e 'js' ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lucianomostaccio/backend-3rd-challenge-.git"
+    "devstart": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lucianomostaccio/backend-3rd-challenge-/issues"
-  },
-  "homepage": "https://github.com/lucianomostaccio/backend-3rd-challenge-#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }

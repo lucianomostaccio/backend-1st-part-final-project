@@ -101,7 +101,7 @@ class ProductManager {
   }
 }
 
-// Ejemplo de uso:
+//Ejemplo de uso:
 // const filePath = path.join(__dirname, "products.json");
 // const manager = new ProductManager(filePath);
 

@@ -12,10 +12,10 @@
     "id": 2,
     "title": "Producto 2",
     "description": "Descripción del producto 2",
-    "price": 11000,
+    "price": 5000,
     "thumbnail": "images/producto2.jpg",
     "code": "PROD002",
-    "stock": 50
+    "stock": 70
   },
   {
     "id": 3,
