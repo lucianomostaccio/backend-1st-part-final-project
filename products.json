@@ -3,90 +3,110 @@
     "id": 1,
     "title": "Producto 1",
     "description": "Descripción del producto 1",
-    "price": 15000,
-    "thumbnail": "images/producto1.jpg",
     "code": "PROD001",
-    "stock": 50
+    "price": 15000,
+    "status": true,
+    "stock": 50,
+    "category": "categoría 1",
+    "thumbnails": "images/producto1.jpg"
   },
   {
     "id": 2,
     "title": "Producto 2",
     "description": "Descripción del producto 2",
-    "price": 5000,
-    "thumbnail": "images/producto2.jpg",
     "code": "PROD002",
-    "stock": 70
+    "price": 5000,
+    "status": true,
+    "stock": 70,
+    "category": "categoría 2",
+    "thumbnails": "images/producto2.jpg"
   },
   {
     "id": 3,
     "title": "Producto 3",
     "description": "Descripción del producto 3",
-    "price": 35000,
-    "thumbnail": "images/producto3.jpg",
     "code": "PROD003",
-    "stock": 80
+    "price": 35000,
+    "status": true,
+    "stock": 80,
+    "category": "categoría 1",
+    "thumbnails": "images/producto3.jpg"
   },
   {
     "id": 4,
     "title": "Producto 4",
     "description": "Descripción del producto 4",
-    "price": 12000,
-    "thumbnail": "images/producto4.jpg",
     "code": "PROD004",
-    "stock": 50
+    "price": 12000,
+    "status": true,
+    "stock": 50,
+    "category": "categoría 3",
+    "thumbnails": "images/producto4.jpg"
   },
   {
     "id": 5,
     "title": "Producto 5",
     "description": "Descripción del producto 5",
-    "price": 35000,
-    "thumbnail": "images/producto5.jpg",
     "code": "PROD005",
-    "stock": 70
+    "price": 35000,
+    "status": true,
+    "stock": 70,
+    "category": "categoría 1",
+    "thumbnails": "images/producto5.jpg"
   },
   {
     "id": 6,
     "title": "Producto 6",
     "description": "Descripción del producto 6",
-    "price": 9000,
-    "thumbnail": "images/producto6.jpg",
     "code": "PROD006",
-    "stock": 30
+    "price": 9000,
+    "status": true,
+    "stock": 30,
+    "category": "categoría 3",
+    "thumbnails": "images/producto6.jpg"
   },
   {
     "id": 7,
     "title": "Producto 7",
     "description": "Descripción del producto 7",
-    "price": 15000,
-    "thumbnail": "images/producto7.jpg",
     "code": "PROD007",
-    "stock": 50
+    "price": 15000,
+    "status": true,
+    "stock": 50,
+    "category": "categoría 2",
+    "thumbnails": "images/producto7.jpg"
   },
   {
     "id": 8,
     "title": "Producto 8",
     "description": "Descripción del producto 8",
-    "price": 35000,
-    "thumbnail": "images/producto8.jpg",
     "code": "PROD008",
-    "stock": 60
+    "price": 35000,
+    "status": true,
+    "stock": 60,
+    "category": "categoría 3",
+    "thumbnails": "images/producto8.jpg"
   },
   {
     "id": 9,
     "title": "Producto 9",
     "description": "Descripción del producto 9",
-    "price": 15000,
-    "thumbnail": "images/producto9.jpg",
     "code": "PROD009",
-    "stock": 30
+    "price": 15000,
+    "status": true,
+    "stock": 30,
+    "category": "categoría 2",
+    "thumbnails": "images/producto9.jpg"
   },
   {
     "id": 10,
     "title": "Producto 10",
     "description": "Descripción del producto 10",
-    "price": 20000,
-    "thumbnail": "images/producto10.jpg",
     "code": "PROD010",
-    "stock": 40
+    "price": 20000,
+    "status": true,
+    "stock": 40,
+    "category": "categoría 3",
+    "thumbnails": "images/producto10.jpg"
   }
 ]

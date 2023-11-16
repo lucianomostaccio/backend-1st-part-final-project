@@ -1,8 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 
+const filePath = path.join(__dirname, "../products.json");
+
 class ProductManager {
-  constructor(filePath) {
+  constructor() {
     this.path = filePath;
     this.products = [];
     this.nextId = 1;
@@ -33,10 +35,30 @@ class ProductManager {
   }
 
   addProduct(productData) {
-    const { title, description, price, thumbnail, code, stock } = productData;
+    const {
+      title,
+      description,
+      code,
+      price,
+      status = true,
+      stock,
+      category,
+      thumbnails,
+    } = productData;
 
-    if (!title || !description || !price || !thumbnail || !code || !stock) {
-      console.error("Todos los campos son obligatorios.");
+    if (
+      !title ||
+      !description ||
+      !code ||
+      !price ||
+      status ||
+      !stock ||
+      category ||
+      !thumbnails
+    ) {
+      console.error(
+        "Los campos son obligatorios: title, description, code,  price, status (es 'true' por defecto), stock, y category. El array de thumbnails es opcional."
+      );
       return;
     }
 
@@ -50,10 +72,12 @@ class ProductManager {
       id: this.nextId,
       title,
       description,
-      price,
-      thumbnail,
       code,
+      price,
+      status,
       stock,
+      category,
+      thumbnails,
     };
 
     this.products.push(newProduct);
@@ -100,39 +124,5 @@ class ProductManager {
     }
   }
 }
-
-//Ejemplo de uso:
-// const filePath = path.join(__dirname, "products.json");
-// const manager = new ProductManager(filePath);
-
-// const allProducts = manager.getProducts();
-// console.log("Todos los productos:", allProducts);
-
-// manager.addProduct({
-//   title: "Producto 1",
-//   description: "Descripción del producto 1",
-//   price: 10000,
-//   thumbnail: "images/producto1.jpg",
-//   code: "PROD001",
-//   stock: 50,
-// });
-
-// manager.addProduct({
-//   title: "Producto 2",
-//   description: "Descripción del producto 2",
-//   price: 5000,
-//   thumbnail: "images/producto2.jpg",
-//   code: "PROD002",
-//   stock: 70,
-// });
-
-// const productById = manager.getProductById(1);
-// console.log("Producto por ID:", productById);
-
-// manager.updateProduct(1, { price: 15000 }); // Actualizar el precio del Producto 1
-
-// manager.deleteProduct(2); // Eliminar el Producto 2
-// console.log("(se ha eliminado el producto 2)");
-// console.log("Todos los productos que quedaron:", allProducts);
 
 module.exports = ProductManager;
