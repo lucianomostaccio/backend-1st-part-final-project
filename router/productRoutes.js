@@ -40,6 +40,7 @@ router.post("/", async (req, res) => {
   const productData = req.body;
   productManager.addProduct(productData);
   res.status(201).json({ message: "Producto agregado exitosamente" });
+  console.log("agregado producto:", productData);
 });
 
 // Actualizar un producto por id
