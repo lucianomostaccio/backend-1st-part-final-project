@@ -99,7 +99,7 @@ class ProductManager {
     const productToUpdate = this.getProductById(id);
 
     if (productToUpdate) {
-      // Actualizamos el producto utilizando el spread operator
+      // se actualiza el producto utilizando el spread operator
       this.products = this.products.map((product) =>
         product.id === id ? { ...product, ...updatedProduct } : product
       );

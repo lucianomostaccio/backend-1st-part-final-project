@@ -39,9 +39,14 @@ router.get("/:pid", async (req, res) => {
 // Agregar un nuevo producto
 router.post("/", async (req, res) => {
   const productData = req.body;
-  productManager.addProduct(productData);
-  res.status(201).json({ message: "Producto agregado exitosamente" });
-  console.log("agregado producto:", productData);
+  try {
+    await productManager.addProduct(productData);
+    res.status(201).json({ message: "Pedido de agregado exitoso" });
+    console.log("producto agregado:", productData);
+  } catch (error) {
+    console.error("error al agregar el producto", error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
 });
 
 // Actualizar un producto por id
