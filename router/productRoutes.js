@@ -22,6 +22,7 @@ router.get("/", async (req, res) => {
 router.get("/:pid", async (req, res) => {
   try {
     const productId = Number(req.params.pid);
+    console.log("id de producto ingresada:", productId);
     const product = await productManager.getProductById(productId);
 
     if (product) {
@@ -45,19 +46,24 @@ router.post("/", async (req, res) => {
 
 // Actualizar un producto por id
 router.put("/:pid", async (req, res) => {
-  // @ts-ignore
-  const productId = parseInt(req.params.id);
+  const productId = Number(req.params.pid);
+  console.log("id de producto ingresada:", productId);
   const updatedProduct = req.body;
+  console.log("nuevos campos", updatedProduct);
   productManager.updateProduct(productId, updatedProduct);
-  res.json({ message: "Producto actualizado exitosamente" });
+  res.json({
+    message:
+      "Pedido exitoso, producto deberia haberse actualizado exitosamente",
+  });
 });
 
 // Eliminar un producto por ID
 router.delete("/:pid", async (req, res) => {
-  // @ts-ignore
-  const productId = parseInt(req.params.id);
+  const productId = Number(req.params.pid);
   productManager.deleteProduct(productId);
-  res.json({ message: "Producto eliminado exitosamente" });
+  res.json({
+    message: "Pedido exitoso, debería haberse eliminado el producto",
+  });
 });
 
 module.exports = router;

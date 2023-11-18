@@ -15,7 +15,7 @@ class ProductManager {
     try {
       const data = await fs.promises.readFile(this.path, "utf8");
       this.products = JSON.parse(data);
-      console.log("Productos leídos desde el json:", this.products);
+      // console.log("Productos leídos desde el json:", this.products);
       const lastProduct = this.products[this.products.length - 1];
       if (lastProduct) {
         this.nextId = lastProduct.id + 1;
@@ -87,21 +87,24 @@ class ProductManager {
   //traer producto por id
   getProductById(id) {
     const product = this.products.find((product) => product.id === id);
-655
     if (!product) {
       console.error("Producto no encontrado");
     } else {
       return product;
     }
   }
+
   //updatear producto obtenido con id en el paso anterior
   async updateProduct(id, updatedProduct) {
-    const index = this.products.findIndex((product) => product.id === id);
+    const productToUpdate = this.getProductById(id);
 
-    if (index !== -1) {
-      this.products[index] = { ...this.products[index], ...updatedProduct };
+    if (productToUpdate) {
+      // Actualizamos el producto utilizando el spread operator
+      this.products = this.products.map((product) =>
+        product.id === id ? { ...product, ...updatedProduct } : product
+      );
       await this.saveProductsToFile();
-      console.log("Producto actualizado:", this.products[index]);
+      console.log("Producto actualizado:", this.getProductById(id));
     } else {
       console.error("Producto no encontrado para actualizar");
     }
@@ -109,12 +112,13 @@ class ProductManager {
 
   //borrar producto por id
   async deleteProduct(id) {
-    const index = this.products.findIndex((product) => product.id === id);
-
-    if (index !== -1) {
-      this.products.splice(index, 1);
+    const productToDelete = this.getProductById(id);
+    console.log("producto a eliminar encontrado por id:", productToDelete);
+    if (productToDelete) {
+      // Utilizamos filter para crear un nuevo array sin el producto a eliminar
+      this.products = this.products.filter((product) => product.id !== id);
       await this.saveProductsToFile();
-      console.log("Producto eliminado con éxito.");
+      console.log("Producto eliminado");
     } else {
       console.error("Producto no encontrado para eliminar");
     }
