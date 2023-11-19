@@ -10,8 +10,13 @@ const productManager = new ProductManager();
 // @ts-ignore
 router.get("/", async (req, res) => {
   try {
+    const limit = Number(req.query.limit);
     const products = await productManager.getProducts();
-    res.json(products);
+    if (!isNaN(limit)) {
+      res.json(products.slice(0, limit));
+    } else {
+      res.json(products);
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error al obtener los productos" });

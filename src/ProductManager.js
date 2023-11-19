@@ -34,6 +34,12 @@ class ProductManager {
       console.error("Error al guardar los productos en el archivo:", err);
     }
   }
+
+  //traer los productos
+  getProducts() {
+    return this.products;
+  }
+
   //agregar producto
   async addProduct(productData) {
     const {
@@ -77,11 +83,6 @@ class ProductManager {
     this.nextId++; //autogenerar el id sumando 1
     await this.saveProductsToFile(); //ejecutar la función para escribir el nuevo producto en el json
     console.log("Producto agregado:", newProduct);
-  }
-
-  //traer los productos
-  getProducts() {
-    return this.products;
   }
 
   //traer producto por id

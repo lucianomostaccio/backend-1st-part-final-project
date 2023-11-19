@@ -142,17 +142,16 @@
   },
   {
     "id": 11,
-    "title": "Producto nuevo",
-    "description": "Descripción del producto nuevo",
+    "title": "Nuevo título 11 modificado con put",
+    "description": "Nueva descripción",
     "code": "PROD011",
-    "price": 6000,
+    "price": 5000,
     "status": true,
-    "stock": 60,
-    "category": "categoría 2",
+    "stock": 50,
+    "category": "Nueva categoría",
     "thumbnails": [
-      "images/productonuevo.jpg",
-      "images/otraimagen.jpg",
-      "images/otraimagenmas.jpg"
+      "images/nueva_imagen1.jpg",
+      "images/nueva_imagen2.jpg"
     ]
   }
 ]
