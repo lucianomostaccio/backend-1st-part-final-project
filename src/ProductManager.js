@@ -59,12 +59,7 @@ class ProductManager {
       );
       return;
     }
-    //chequear si ya existe
-    const codeExists = this.products.some((product) => product.code === code);
-    if (codeExists) {
-      console.error("Ya existe un producto con ese código.");
-      return;
-    }
+
     //setear nuevo producto
     const newProduct = {
       id: this.nextId,
